@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-10-23T17:34:53</DateModified>
+  <DateModified>2024-09-29T01:32:22</DateModified>
   <ModuleName>led_test</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>E:/BaiduYunDownload/AX309.1600808/AX309/09_VERILOG/04_led_test/iseconfig/led_test.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/BaiduYunDownload/AX309.1600808/AX309/09_VERILOG/04_led_test\</ImplementationReportsDirectory>
+  <SavedFilePath>/home/msx/AX309/SRC/Verilog/04_led_test/iseconfig/led_test.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/msx/AX309/SRC/Verilog/04_led_test/</ImplementationReportsDirectory>
   <DateInitialized>2015-02-28T09:29:16</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

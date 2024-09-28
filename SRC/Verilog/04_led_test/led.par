@@ -1,14 +1,21 @@
-Release 13.1 par O.40d (nt64)
-Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+Release 14.7 par P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-LENOVO-PC::  Mon Jan 12 16:51:35 2015
+msx-machine::  Sun Sep 29 01:40:02 2024
 
-par -w -intstyle ise -ol high -mt off led_map.ncd led.ncd led.pcf 
+par -w -ol high led_map.ncd led.ncd led.pcf 
 
 
 Constraints file: led.pcf.
-Loading device for application Rf_Device from file '6slx16.nph' in environment C:\Xilinx\13.1\ISE_DS\ISE\.
+Loading device for application Rf_Device from file '6slx16.nph' in environment /home/msx/Xilinx/14.7/ISE_DS/ISE/.
    "led" is an NCD, version 3.2, device xc6slx16, package csg324, speed -3
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+INFO:Security:54 - 'xc6slx16' is a WebPack part.
+INFO:Security:66 - Your license for 'ISE' is for evaluation use only.
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue
+to function, but you no longer qualify for Xilinx software updates or new releases.
+
+----------------------------------------------------------------------
 
 Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
 Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
@@ -19,7 +26,7 @@ INFO:Par:282 - No user timing constraints were detected or you have set the opti
    reported in the PAR report in this mode. The PAR timing summary will list the performance achieved for each clock.
    Note: For the fastest runtime, set the effort level to "std".  For best performance, set the effort level to "high".
 
-Device speed data version:  "PRODUCTION 1.17 2011-02-03".
+Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 
 
 
@@ -45,6 +52,7 @@ Slice Logic Utilization:
 
 Slice Logic Distribution:
   Number of occupied Slices:                    27 out of   2,278    1%
+  Number of MUXCYs used:                        32 out of   4,556    1%
   Number of LUT Flip Flop pairs used:           84
     Number with an unused Flip Flop:            64 out of      84   76%
     Number with an unused LUT:                   0 out of      84    0%
@@ -91,35 +99,35 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 3 secs 
-Finished initial Timing Analysis.  REAL time: 3 secs 
+Starting initial Timing Analysis.  REAL time: 5 secs 
+Finished initial Timing Analysis.  REAL time: 5 secs 
 
 Starting Router
 
 
-Phase  1  : 344 unrouted;      REAL time: 3 secs 
+Phase  1  : 344 unrouted;      REAL time: 5 secs 
 
-Phase  2  : 287 unrouted;      REAL time: 3 secs 
+Phase  2  : 287 unrouted;      REAL time: 6 secs 
 
-Phase  3  : 52 unrouted;      REAL time: 3 secs 
+Phase  3  : 52 unrouted;      REAL time: 6 secs 
 
-Phase  4  : 52 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
+Phase  4  : 52 unrouted; (Par is working to improve performance)     REAL time: 6 secs 
 
 Updating file: led.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
 
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
-Total REAL time to Router completion: 4 secs 
-Total CPU time to Router completion: 4 secs 
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
+Total REAL time to Router completion: 7 secs 
+Total CPU time to Router completion: 7 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -156,10 +164,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 5 secs 
-Total CPU time to PAR completion: 4 secs 
+Total REAL time to PAR completion: 7 secs 
+Total CPU time to PAR completion: 8 secs 
 
-Peak Memory Usage:  297 MB
+Peak Memory Usage:  603 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

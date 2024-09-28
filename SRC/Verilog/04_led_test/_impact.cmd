@@ -1,4 +1,4 @@
-loadProjectFile -file "C:\Xilinx\auto_project.ipf"
+loadProjectFile -file "auto_project.ipf"
 setMode -ss
 setMode -sm
 setMode -hw140
@@ -31,7 +31,7 @@ setMode -acempm
 setMode -pff
 setMode -pff
 setMode -pff
-addConfigDevice  -name "led_tset" -path "E:\Project\AX516\verilog\led_test"
+addConfigDevice  -name "led_tset" -path "../led_test"
 setSubmode -pffspi
 setAttribute -configdevice -attr multibootBpiType -value ""
 addDesign -version 0 -name "0"
@@ -61,7 +61,7 @@ addDeviceChain -index 0
 setSubmode -pffspi
 setMode -pff
 setAttribute -design -attr name -value "0000"
-addDevice -p 1 -file "E:/Project/AX516/verilog/led_test/led_test.bit"
+addDevice -p 1 -file "led_test.bit"
 setMode -pff
 setSubmode -pffspi
 generate
@@ -73,10 +73,10 @@ setCable -port auto
 Identify -inferir 
 identifyMPM 
 attachflash -position 1 -spi "W25Q128FV"
-assignfiletoattachedflash -position 1 -file "E:/Project/AX516/verilog/led_test/led_tset.mcs"
+assignfiletoattachedflash -position 1 -file "led_tset.mcs"
 Program -p 1 -dataWidth 1 -spionly -e -v -loadfpga 
 Program -p 1 -dataWidth 1 -spionly -e -v -loadfpga 
-assignFile -p 1 -file "E:/Project/AX516/verilog/key_test/key_test.bit"
+assignFile -p 1 -file "../05_key_test/key_test.bit"
 Program -p 1 
 setMode -bs
 setMode -bs
@@ -88,7 +88,7 @@ setMode -acecf
 setMode -acempm
 setMode -pff
 setMode -bs
-saveProjectFile -file "C:\Xilinx\\auto_project.ipf"
+saveProjectFile -file "auto_project.ipf"
 setMode -bs
 setMode -pff
 setMode -bs

@@ -1,7 +1,7 @@
-Release 13.1 - par O.40d (nt64)
-Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+Release 14.7 - par P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon Jan 12 16:51:40 2015
+Sun Sep 29 01:40:10 2024
 
 
 # NOTE: This file is designed to be imported into a spreadsheet program
@@ -273,7 +273,7 @@ P17||IOBM|IO_L49P_M1DQ10_1|UNUSED||1|||||||||
 P18||IOBS|IO_L49N_M1DQ11_1|UNUSED||1|||||||||
 R1|||GND||||||||||||
 R2|||VCCO_3|||3|||||any******||||
-R3|LED<1>|IOB|IO_L62P_D5_2|OUTPUT|LVCMOS33|2|12|||||LOCATED|NO|NONE|
+R3|LED<1>|IOB|IO_L62P_D5_2|OUTPUT|LVCMOS33|2|12|SLOW||||LOCATED|NO|NONE|
 R4|||GND||||||||||||
 R5||IOBM|IO_L48P_D7_2|UNUSED||2|||||||||
 R6|||VCCO_2|||2|||||3.30||||
@@ -291,8 +291,8 @@ R17|||VCCO_1|||1|||||any******||||
 R18|||GND||||||||||||
 T1||IOBS|IO_L33N_M3DQ13_3|UNUSED||3|||||||||
 T2||IOBM|IO_L33P_M3DQ12_3|UNUSED||3|||||||||
-T3|LED<2>|IOB|IO_L62N_D6_2|OUTPUT|LVCMOS33|2|12|||||LOCATED|NO|NONE|
-T4|LED<3>|IOB|IO_L63P_2|OUTPUT|LVCMOS33|2|12|||||LOCATED|NO|NONE|
+T3|LED<2>|IOB|IO_L62N_D6_2|OUTPUT|LVCMOS33|2|12|SLOW||||LOCATED|NO|NONE|
+T4|LED<3>|IOB|IO_L63P_2|OUTPUT|LVCMOS33|2|12|SLOW||||LOCATED|NO|NONE|
 T5||IOBS|IO_L48N_RDWR_B_VREF_2|UNUSED||2|||||||||
 T6||IOBM|IO_L45P_2|UNUSED||2|||||||||
 T7||IOBS|IO_L46N_2|UNUSED||2|||||||||
@@ -329,7 +329,7 @@ V1|||GND||||||||||||
 V2|||PROGRAM_B_2||||||||||||
 V3||IOBS|IO_L65N_CSO_B_2|UNUSED||2|||||||||
 V4||IOBS|IO_L63N_2|UNUSED||2|||||||||
-V5|LED<0>|IOB|IO_L49N_D4_2|OUTPUT|LVCMOS33|2|12|||||LOCATED|NO|NONE|
+V5|LED<0>|IOB|IO_L49N_D4_2|OUTPUT|LVCMOS33|2|12|SLOW||||LOCATED|NO|NONE|
 V6||IOBS|IO_L45N_2|UNUSED||2|||||||||
 V7||IOBS|IO_L43N_2|UNUSED||2|||||||||
 V8||IOBS|IO_L41N_VREF_2|UNUSED||2|||||||||
