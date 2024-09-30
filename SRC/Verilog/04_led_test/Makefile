@@ -1,4 +1,4 @@
-DEVICE = 6slx16csg324pkg
+DEVICE = XC6SLX9-ftg256
 BOARD = DigilentS3
 NAME? = led
 
