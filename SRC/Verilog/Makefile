@@ -1,14 +1,13 @@
-DEVICE = xc6slx9-ftg256
-BOARD = DigilentS3
-NAME? = led
+DEVICE = xc6slx9-3ftg256
+TITLE := $(shell echo $(shell basename $(CURDIR)) | cut -c 4-)
 
 IMPACT_CMD_FILE := _impact.cmd
-UCF_FILE := $(NAME).ucf
-UT_FILE  := $(NAME).ut
-PRJ_FILE := $(NAME).prj
-XST_FILE := $(NAME).xst
-TOP_FILE := $(NAME).v
-TOP := $(NAME)
+UCF_FILE := $(TITLE).ucf
+UT_FILE  := $(TITLE).ut
+PRJ_FILE := $(TITLE).prj
+XST_FILE := $(TITLE).xst
+TOP_FILE := $(TITLE).v
+TOP := $(TITLE)
 
 SOURCES := $(strip $(shell \
 	cat $(PRJ_FILE) | grep -oE '[^[:blank:]]+[[:blank:]]*$$' | tr -d '"' ))

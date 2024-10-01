@@ -5,5 +5,8 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="user_fatal" file="NgdBuild" num="653" delta="new" >An invalid target <arg fmt="%s" index="1">package</arg> &quot;<arg fmt="%s" index="2">csg324pkg</arg>&quot; was given in the &quot;-p&quot; option value.  Please consult the Xilinx Programmable Logic Data Book to find a legal target package.
+</msg>
+
 </messages>
 

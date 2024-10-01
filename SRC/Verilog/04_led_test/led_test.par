@@ -1,15 +1,14 @@
-Release 14.7 par P.20131013 (nt64)
+Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-LAOLUO-PC::  Fri Sep 25 09:39:34 2015
+msx-machine::  Sun Sep 29 22:19:56 2024
 
-par -w -intstyle ise -ol high -mt off led_test_map.ncd led_test.ncd
-led_test.pcf 
+par -w -ol high led_test_map.ncd led_test.ncd led_test.pcf 
 
 
 Constraints file: led_test.pcf.
-Loading device for application Rf_Device from file '6slx9.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
-   "led_test" is an NCD, version 3.2, device xc6slx9, package ftg256, speed -2
+Loading device for application Rf_Device from file '6slx9.nph' in environment /home/msx/Xilinx/14.7/ISE_DS/ISE/.
+   "led_test" is an NCD, version 3.2, device xc6slx9, package ftg256, speed -3
 
 Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
 Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
@@ -17,6 +16,9 @@ Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
 
 Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 
+
+WARNING:Par:251 - Map -timing was run with a lower effort level setting than you are using for PAR.  Xilinx recommends that you rerun Map
+   -timing with the effort level that you have set in PAR to achieve better design performance.
 
 
 Device Utilization Summary:
@@ -40,7 +42,7 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    29 out of   1,430    2%
+  Number of occupied Slices:                    28 out of   1,430    1%
   Number of MUXCYs used:                        32 out of   2,860    1%
   Number of LUT Flip Flop pairs used:          100
     Number with an unused Flip Flop:            64 out of     100   64%
@@ -88,35 +90,35 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 3 secs 
-Finished initial Timing Analysis.  REAL time: 3 secs 
+Starting initial Timing Analysis.  REAL time: 4 secs 
+Finished initial Timing Analysis.  REAL time: 4 secs 
 
 Starting Router
 
 
-Phase  1  : 356 unrouted;      REAL time: 3 secs 
+Phase  1  : 356 unrouted;      REAL time: 5 secs 
 
-Phase  2  : 313 unrouted;      REAL time: 3 secs 
+Phase  2  : 313 unrouted;      REAL time: 5 secs 
 
-Phase  3  : 99 unrouted;      REAL time: 3 secs 
+Phase  3  : 119 unrouted;      REAL time: 5 secs 
 
-Phase  4  : 99 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+Phase  4  : 119 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
 
 Updating file: led_test.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
 
-Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
-Total REAL time to Router completion: 3 secs 
-Total CPU time to Router completion: 3 secs 
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 secs 
+Total REAL time to Router completion: 6 secs 
+Total CPU time to Router completion: 6 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -134,7 +136,7 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP | BUFGMUX_X3Y13| No   |   11 |  0.070     |  1.507      |
+|           clk_BUFGP | BUFGMUX_X3Y13| No   |   11 |  0.070     |  1.184      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -154,8 +156,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_ | SETUP       |    14.951ns|     5.049ns|       0|           0
-  pin" 50 MHz HIGH 50%                      | HOLD        |     0.657ns|            |       0|           0
+  TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_ | SETUP       |    15.553ns|     4.447ns|       0|           0
+  pin" 50 MHz HIGH 50%                      | HOLD        |     0.415ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -166,17 +168,17 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 3 secs 
-Total CPU time to PAR completion: 3 secs 
+Total REAL time to PAR completion: 6 secs 
+Total CPU time to PAR completion: 6 secs 
 
-Peak Memory Usage:  586 MB
+Peak Memory Usage:  593 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.
 Timing: Completed - No errors found.
 
 Number of error messages: 0
-Number of warning messages: 0
+Number of warning messages: 1
 Number of info messages: 0
 
 Writing design to file led_test.ncd
