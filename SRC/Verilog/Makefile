@@ -106,6 +106,7 @@ clean:
 	rm -f $(foreach x,$(CLEAN_EXTS),$(TOP)$(x))
 	rm -f par_usage_statistics.html webtalk.log
 	rm -f usage_statistics_webtalk.html
+	rm -f *.cmd_log
 	rm -f '#Makefile#' '.#Makefile'
 	rm -f _impactbatch.log
 	rm -rf _ngo xlnx_auto_0_xdb  _xmsgs xst
