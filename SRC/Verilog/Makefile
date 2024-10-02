@@ -7,15 +7,18 @@ UT_FILE  := $(TITLE).ut
 PRJ_FILE := $(TITLE).prj
 XST_FILE := $(TITLE).xst
 
-SOURCES := $(strip $(shell \
-	cat $(PRJ_FILE) | grep -oE '[^[:blank:]]+[[:blank:]]*$$' | tr -d '"' ))
+ifeq ($(wildcard verilog_files),)
+	SOURCES := $(strip $(shell cat $(PRJ_FILE) | grep -oE '[^[:blank:]]+[[:blank:]]*$$' | tr -d '"' ))
+else
+    SOURCES := $(shell cat verilog_files)
+endif
 
 TOP := $(strip $(shell \
 	cat $(XST_FILE) | grep "[-]top" | sed s/-top//g ))
 	
 TOP_FILE := $(filter %$(TITLE).v,$(SOURCES))
 
-ifneq ($(wildcard ucf_file),"")
+ifneq ($(wildcard ucf_file),)
 	UCF_FILE := $(shell cat ucf_file)
 endif 
 
@@ -36,14 +39,14 @@ bitgen: $(TOP).bit
 
 #-----------------------------------------------------------------------------
 
-%.ngc %.srp: $(SOURCES) $(PRJ_FILE) $(XST_FILE)
+%.ngc %.srp: $(subst $(TOP),%,$(TOP_FILE)) $(SOURCES) $(PRJ_FILE) $(XST_FILE)
 	@rm -f $*.ngc $*.srp
 	mkdir -p xst/projnav.tmp
 	xst -intstyle silent  -ifn $(filter %.xst,$^)
 
 #-----------------------------------------------------------------------------
 
-%.ngd %.bld: $(TITLE).ngc $(UCF_FILE)
+%.ngd %.bld: %.ngc $(UCF_FILE)
 	@rm -f $*.ngd $*.bld
 	ngdbuild -intstyle silent -dd _ngo -nt off -uc \
 		$(filter %.ucf,$^) -p $(DEVICE) $< $(TOP)
@@ -84,11 +87,13 @@ burn: $(TOP).bit $(IMPACT_CMD_FILE)
 	impact -batch $(IMPACT_CMD_FILE)
 
 show:
-	echo SOURCES => $(SOURCES)
+	@echo SOURCES $(SOURCES)
 	echo TOP => $(TOP)
 	echo TITLE => $(TITLE)
 	echo $(TOP_FILE)
 	echo $(UCF_FILE)
+	@echo XST_FILE $(XST_FILE)
+	@echo PRJ_FILE $(PRJ_FILE)
 #-----------------------------------------------------------------------------
 
 CLEAN_EXTS := .bgn .bit _bitgen.xwbt .bld .drc .lso _map.map _map.mrp _map.ncd
