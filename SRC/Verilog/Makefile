@@ -6,14 +6,18 @@ UCF_FILE := $(TITLE).ucf
 UT_FILE  := $(TITLE).ut
 PRJ_FILE := $(TITLE).prj
 XST_FILE := $(TITLE).xst
-TOP_FILE := $(TITLE).v
-TOP := $(TITLE)
 
 SOURCES := $(strip $(shell \
 	cat $(PRJ_FILE) | grep -oE '[^[:blank:]]+[[:blank:]]*$$' | tr -d '"' ))
 
-#TOP := $(strip $(shell \
-#	cat $(XST_FILE) | grep "[-]top" | sed s/-top//g ))
+TOP := $(strip $(shell \
+	cat $(XST_FILE) | grep "[-]top" | sed s/-top//g ))
+	
+TOP_FILE := $(filter %$(TITLE).v,$(SOURCES))
+
+ifneq ($(wildcard ucf_file),"")
+	UCF_FILE := $(shell cat ucf_file)
+endif 
 
 #ifneq "$(basename $(notdir $(TOP_FILE)))" "$(TOP)"
 #	$(error Design top must have the same name as top-level source file)
@@ -21,8 +25,8 @@ SOURCES := $(strip $(shell \
 
 default: burn
 
-synth: $(TOP).ngc $(TOP).srp
-ngdbuild: $(TOP).ngd $(TOP).bld
+synth: $(TITLE).ngc $(TITLE).srp
+ngdbuild: $(TITLE).ngd $(TITLE).bld
 map: $(TOP)_map.ncd $(TOP).pcf
 par: $(TOP).ncd $(TOP).unroutes $(TOP).par $(TOP).twr
 bitgen: $(TOP).bit
@@ -32,14 +36,14 @@ bitgen: $(TOP).bit
 
 #-----------------------------------------------------------------------------
 
-%.ngc %.srp: $(subst $(TOP),%,$(TOP_FILE)) $(SOURCES) $(PRJ_FILE) $(XST_FILE)
+%.ngc %.srp: $(SOURCES) $(PRJ_FILE) $(XST_FILE)
 	@rm -f $*.ngc $*.srp
 	mkdir -p xst/projnav.tmp
 	xst -intstyle silent  -ifn $(filter %.xst,$^)
 
 #-----------------------------------------------------------------------------
 
-%.ngd %.bld: %.ngc $(UCF_FILE)
+%.ngd %.bld: $(TITLE).ngc $(UCF_FILE)
 	@rm -f $*.ngd $*.bld
 	ngdbuild -intstyle silent -dd _ngo -nt off -uc \
 		$(filter %.ucf,$^) -p $(DEVICE) $< $(TOP)
@@ -79,6 +83,12 @@ bitgen: $(TOP).bit
 burn: $(TOP).bit $(IMPACT_CMD_FILE)
 	impact -batch $(IMPACT_CMD_FILE)
 
+show:
+	echo SOURCES => $(SOURCES)
+	echo TOP => $(TOP)
+	echo TITLE => $(TITLE)
+	echo $(TOP_FILE)
+	echo $(UCF_FILE)
 #-----------------------------------------------------------------------------
 
 CLEAN_EXTS := .bgn .bit _bitgen.xwbt .bld .drc .lso _map.map _map.mrp _map.ncd
