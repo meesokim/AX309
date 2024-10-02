@@ -30,43 +30,43 @@ reg [7:0] Time_second_reg;
 
 wire clk;
 
-reg [7:0] time_disp [17:0];                        //´æ´¢·¢ËÍ×Ö·û
+reg [7:0] time_disp [17:0];                        //æ´¢Ö·
 
 reg [15:0] uart_cnt;
 reg [2:0] uart_stat;
 
-reg  [7:0]  txdata;             //´®¿Ú·¢ËÍ×Ö·û
-reg         wrsig;               //´®¿Ú·¢ËÍÓÐÐ§ÐÅºÅ
+reg  [7:0]  txdata;             //Ú·Ö·
+reg         wrsig;               //Ú·Ð§Åº
 
 reg [8:0] k;
 			  
 /********************************************/
-//´æ´¢´ý·¢ËÍµÄÊ±¼ä×Ö·û
+//æ´¢ÍµÊ±Ö·
 /********************************************/
 always @(*)
-begin     //¶¨Òå·¢ËÍµÄ×Ö·û
-	 time_disp[0]<=84;                           //´æ´¢×Ö·ûT 
-	 time_disp[1]<=105;                          //´æ´¢×Ö·ûi
-    time_disp[2]<=109;                          //´æ´¢×Ö·ûm
-	 time_disp[3]<=101;                          //´æ´¢×Ö·ûe 	 
-	 time_disp[4]<=32;                           //´æ´¢×Ö·û¿Õ¸ñ                           
-	 time_disp[5]<=105;                          //´æ´¢×Ö·ûi 
-	 time_disp[6]<=115;                          //´æ´¢×Ö·ûs
-	 time_disp[7]<=32;                           //´æ´¢×Ö·û¿Õ¸ñ 
-	 time_disp[8]<=Time_hour[7:4]+48;            //´æ´¢×Ö·ûÐ¡Ê±Ê®Î»
-	 time_disp[9]<=Time_hour[3:0]+48;            //´æ´¢×Ö·ûÐ¡Ê±
-	 time_disp[10]<=58;                           //´æ´¢×Ö·û:
-	 time_disp[11]<=Time_munite[7:4]+48;         //´æ´¢×Ö·û·ÖÖÓÊ®Î»
-	 time_disp[12]<=Time_munite[3:0]+48;         //´æ´¢×Ö·û·ÖÖÓ
-	 time_disp[13]<=58;                          //´æ´¢×Ö·û:
-	 time_disp[14]<=Time_second[7:4]+48;         //´æ´¢×Ö·ûÃëÖÓÊ®Î»
-	 time_disp[15]<=Time_second[3:0]+48;         //´æ´¢×Ö·ûÃëÖÓ
-	 time_disp[16]<=10;                          //»»ÐÐ·û
-	 time_disp[17]<=13;                          //»Ø³µ·û 
+begin     //å·¢ÍµÖ·
+	 time_disp[0]<=84;                           //æ´¢Ö·T 
+	 time_disp[1]<=105;                          //æ´¢Ö·i
+    time_disp[2]<=109;                          //æ´¢Ö·m
+	 time_disp[3]<=101;                          //æ´¢Ö·e 	 
+	 time_disp[4]<=32;                           //æ´¢Ö·Õ¸                           
+	 time_disp[5]<=105;                          //æ´¢Ö·i 
+	 time_disp[6]<=115;                          //æ´¢Ö·s
+	 time_disp[7]<=32;                           //æ´¢Ö·Õ¸ 
+	 time_disp[8]<=Time_hour[7:4]+48;            //æ´¢Ö·Ð¡Ê±Ê®Î»
+	 time_disp[9]<=Time_hour[3:0]+48;            //æ´¢Ö·Ð¡Ê±
+	 time_disp[10]<=58;                           //æ´¢Ö·:
+	 time_disp[11]<=Time_munite[7:4]+48;         //æ´¢Ö·Ê®Î»
+	 time_disp[12]<=Time_munite[3:0]+48;         //æ´¢Ö·
+	 time_disp[13]<=58;                          //æ´¢Ö·:
+	 time_disp[14]<=Time_second[7:4]+48;         //æ´¢Ö·Ê®Î»
+	 time_disp[15]<=Time_second[3:0]+48;         //æ´¢Ö·
+	 time_disp[16]<=10;                          //Ð·
+	 time_disp[17]<=13;                          //Ø³ 
 end 
 
 /********************************************/
-//´®¿Ú·¢ËÍÊ±¼ä×Ö·û´®
+//Ú·Ê±Ö·
 /********************************************/
 always @(posedge clk )
 begin
@@ -78,7 +78,7 @@ begin
   else begin
   	 case(uart_stat)
 	 3'b000: begin               
-       if (Time_second_reg != Time_second) begin          //Èç¹ûÃëÊý¾ÝÓÐ±ä»¯,Ïò´®¿Ú·¢ËÍÊ±¼äÐÅÏ¢time_disp[0]~time_disp[17]
+       if (Time_second_reg != Time_second) begin          //Ð±ä»¯,ò´®¿Ú·Ê±Ï¢time_disp[0]~time_disp[17]
 		    uart_stat <= 3'b001; 
 			 Time_second_reg<=Time_second;
 		 end
@@ -87,14 +87,14 @@ begin
 			 Time_second_reg<=Time_second;
 		 end
 	 end	
-	 3'b001: begin                      //·¢ËÍµÚ18¸ö×Ö·ûtime_disp[17]  
+	 3'b001: begin                      //Íµ18Ö·time_disp[17]  
          if (k == 17 ) begin          		 
 				 if(uart_cnt ==0) begin
 					txdata <= time_disp[17]; 
 					uart_cnt <= uart_cnt + 1'b1;
-					wrsig <= 1'b1;                	//uart·¢ËÍÓÐÐ§			
+					wrsig <= 1'b1;                	//uartÐ§			
 				 end	
-				 else if(uart_cnt ==254) begin      //·¢ËÍÒ»¸ö×Ö·ûµÄµÈ´ýÊ±¼äÎª255¸öÊ±ÖÓ,µÈ´ýÊ±¼äÖ»Òª´óÓÚ168¸öÊ±ÖÓ(Ò»¸ö×Ö½Ú·¢ËÍµÄÊ±¼ä)
+				 else if(uart_cnt ==254) begin      //Ò»Ö·ÄµÈ´Ê±Îª255Ê±,È´Ê±Ö»Òª168Ê±(Ò»Ö½Ú·ÍµÊ±)
 					uart_cnt <= 0;
 					wrsig <= 1'b0; 				
 					uart_stat <= 3'b010; 
@@ -106,12 +106,12 @@ begin
 				 end
 		 end
 	    else begin
-				 if(uart_cnt ==0) begin      //·¢ËÍÇ°17¸ö×Ö·û 
+				 if(uart_cnt ==0) begin      //Ç°17Ö· 
 					txdata <= time_disp[k]; 
 					uart_cnt <= uart_cnt + 1'b1;
 					wrsig <= 1'b1;                			
 				 end	
-				 else if(uart_cnt ==254) begin //·¢ËÍÒ»¸ö×Ö·ûµÄµÈ´ýÊ±¼äÎª255¸öÊ±ÖÓ,µÈ´ýÊ±¼äÖ»Òª´óÓÚ168¸öÊ±ÖÓ(Ò»¸ö×Ö½Ú·¢ËÍµÄÊ±¼ä)
+				 else if(uart_cnt ==254) begin //Ò»Ö·ÄµÈ´Ê±Îª255Ê±,È´Ê±Ö»Òª168Ê±(Ò»Ö½Ú·ÍµÊ±)
 					uart_cnt <= 0;
 					wrsig <= 1'b0; 
 					k <= k + 1'b1;				
@@ -122,7 +122,7 @@ begin
 				 end
 		 end	 
 	 end
-	 3'b010: begin       //·¢ËÍfinish	 
+	 3'b010: begin       //finish	 
 		 	uart_stat <= 3'b000; 
 	 end
 	 default:uart_stat <= 3'b000;
@@ -130,13 +130,13 @@ begin
   end
 end
 	 
-/**********²úÉú´®¿ÚÊ±ÖÓ***********/
+/**********Ê±***********/
 clkdiv u0 (
 		.clk50                   (CLK_50M),                           
-		.clkout                  (clk)             //´®¿Ú·¢ËÍÊ±ÖÓ                 
+		.clkout                  (clk)             //Ú·Ê±                 
  );
 
-/**********´®¿Ú·¢ËÍ³ÌÐò***********/
+/**********Ú·Í³***********/
 uarttx u1 (
 		.clk                     (clk),                           
 		.datain                  (txdata),
@@ -145,15 +145,15 @@ uarttx u1 (
 	   .tx                      (tx)		
  );
  
-/**********RTCÊ±ÖÓ¿ØÖÆ³ÌÐò***********/	 
+/**********RTCÊ±Ó¿Æ³***********/	 
 rtc_time U2 (
 
       .CLK( CLK_50M ), 
 	   .RSTn( RSTn ),
 		 
-	   .Time_second( Time_second ),             //DS1302¶Áµ½µÄÃëÊý¾Ý
-	   .Time_munite( Time_munite ),             //DS1302¶Áµ½µÄ·ÖÊý¾Ý
-	   .Time_hour( Time_hour ),                 //DS1302¶Áµ½µÄÊ±Êý¾Ý
+	   .Time_second( Time_second ),             //DS1302
+	   .Time_munite( Time_munite ),             //DS1302Ä·
+	   .Time_hour( Time_hour ),                 //DS1302Ê±
 
 	   .RST( DS1302_RST ),
 	   .SCLK( DS1302_SCLK ),
@@ -164,17 +164,7 @@ rtc_time U2 (
 
 wire [35:0]   CONTROL0;
 wire [255:0]  TRIG0;
-chipscope_icon icon_debug (
-    .CONTROL0(CONTROL0) // INOUT BUS [35:0]
-);
-
-chipscope_ila ila_filter_debug (
-    .CONTROL(CONTROL0), // INOUT BUS [35:0]
-   // .CLK(dma_clk),      // IN
-    .CLK(CLK_50M),      // IN
-    .TRIG0(TRIG0)      // IN BUS [255:0]
-    //.TRIG_OUT(TRIG_OUT0)
-);                                                     
+                                                  
 
 assign  TRIG0[7:0]=Time_second;                                               
 assign  TRIG0[15:8]=Time_munite;           

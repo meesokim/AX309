@@ -1,16 +1,15 @@
-Release 14.7 Map P.20131013 (nt64)
+Release 14.7 Map P.20131013 (lin64)
 Xilinx Mapping Report File for Design 'lcd_test'
 
 Design Information
 ------------------
-Command Line   : map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol
-high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off
--pr off -lc off -power off -o lcd_test_map.ncd lcd_test.ngd lcd_test.pcf 
+Command Line   : map -w -p xc6slx9-3ftg256 -ir off -pr b -detail -ol std
+-logic_opt off -c 100 -o lcd_test_map.ncd lcd_test.ngd lcd_test.pcf 
 Target Device  : xc6slx9
 Target Package : ftg256
-Target Speed   : -2
+Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Fri May 26 11:29:29 2017
+Mapped Date    : Thu Oct  3 01:33:53 2024
 
 Design Summary
 --------------
@@ -35,7 +34,7 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    50 out of   1,430    3%
+  Number of occupied Slices:                    53 out of   1,430    3%
   Number of MUXCYs used:                        40 out of   2,860    1%
   Number of LUT Flip Flop pairs used:          153
     Number with an unused Flip Flop:            80 out of     153   52%
@@ -88,9 +87,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                4.01
 
-Peak Memory Usage:  523 MB
-Total REAL time to MAP completion:  6 secs 
-Total CPU time to MAP completion:   5 secs 
+Peak Memory Usage:  646 MB
+Total REAL time to MAP completion:  41 secs 
+Total CPU time to MAP completion:   41 secs 
 
 Table of Contents
 -----------------
@@ -146,6 +145,7 @@ INFO:PhysDesignRules:1861 - To achieve optimal frequency synthesis performance
 Section 4 - Removed Logic Summary
 ---------------------------------
    2 block(s) optimized away
+  27 Block(s) redundant
 
 Section 5 - Removed Logic
 -------------------------
@@ -155,8 +155,35 @@ TYPE 		BLOCK
 GND 		XST_GND
 VCC 		XST_VCC
 
-To enable printing of redundant blocks removed and signals merged, set the
-detailed map report option and rerun map.
+Redundant Block(s):
+TYPE 		BLOCK
+LUT1 		Mcount_key1_counter_cy<1>_rt
+LUT1 		Mcount_key1_counter_cy<2>_rt
+LUT1 		Mcount_key1_counter_cy<3>_rt
+LUT1 		Mcount_key1_counter_cy<4>_rt
+LUT1 		Mcount_key1_counter_cy<5>_rt
+LUT1 		Mcount_key1_counter_cy<6>_rt
+LUT1 		Mcount_key1_counter_cy<7>_rt
+LUT1 		Mcount_key1_counter_cy<8>_rt
+LUT1 		Mcount_key1_counter_cy<9>_rt
+LUT1 		Mcount_key1_counter_cy<10>_rt
+LUT1 		Mcount_key1_counter_cy<11>_rt
+LUT1 		Mcount_key1_counter_cy<12>_rt
+LUT1 		Mcount_key1_counter_cy<13>_rt
+LUT1 		Mcount_key1_counter_cy<14>_rt
+LUT1 		Mcount_x_cnt_cy<1>_rt
+LUT1 		Mcount_x_cnt_cy<2>_rt
+LUT1 		Mcount_x_cnt_cy<3>_rt
+LUT1 		Mcount_x_cnt_cy<4>_rt
+LUT1 		Mcount_x_cnt_cy<5>_rt
+LUT1 		Mcount_x_cnt_cy<6>_rt
+LUT1 		Mcount_x_cnt_cy<7>_rt
+LUT1 		Mcount_x_cnt_cy<8>_rt
+LUT1 		Mcount_x_cnt_cy<9>_rt
+LUT1 		Mcount_key1_counter_xor<15>_rt
+LUT1 		Mcount_x_cnt_xor<10>_rt
+INV 		reset_n_inv1_INV_0
+INV 		key1_inv1_INV_0
 
 Section 6 - IOB Properties
 --------------------------
@@ -236,12 +263,57 @@ Command Line Tools User Guide "TRACE" chapter.
 
 Section 11 - Configuration String Details
 -----------------------------------------
-Use the "-detail" map option to print out Configuration Strings
+DCM "pll_inst/dcm_sp_inst":
+CLKDV_DIVIDE:2.0
+CLKIN_DIVIDE_BY_2:TRUE
+CLKOUT_PHASE_SHIFT:NONE
+CLK_FEEDBACK:1X
+DESKEW_ADJUST:5
+DFS_FREQUENCY_MODE:LOW
+DLL_FREQUENCY_MODE:LOW
+DSS_MODE:NONE
+DUTY_CYCLE_CORRECTION:TRUE
+STARTUP_WAIT:FALSE
+VERY_HIGH_FREQUENCY:FALSE
+CLKFX_DIVIDE = 25
+CLKFX_MULTIPLY = 9
+CLKIN_PERIOD = 20.000000
+PHASE_SHIFT = 0
+
+
 
 Section 12 - Control Set Information
 ------------------------------------
-Use the "-detail" map option to print out Control Set Information.
++----------------------------------------------------------------------------------------------------------------------------------+
+| Clock Signal | Reset Signal               | Set Signal | Enable Signal                       | Slice Load Count | Bel Load Count |
++----------------------------------------------------------------------------------------------------------------------------------+
+| lcd_clk      |                            |            |                                     | 1                | 1              |
+| lcd_clk      | GND_1_o_GND_1_o_equal_17_o |            |                                     | 3                | 11             |
+| lcd_clk      | _n0261                     |            |                                     | 1                | 1              |
+| lcd_clk      | _n0262                     |            |                                     | 1                | 1              |
+| lcd_clk      | _n0278                     |            |                                     | 2                | 3              |
+| lcd_clk      | _n0279                     |            | key1_counter[15]_PWR_1_o_equal_83_o | 2                | 4              |
+| lcd_clk      | key1_inv                   |            | key1_key1_counter[15]_AND_343_o     | 4                | 16             |
+| lcd_clk      | reset_n_inv                |            |                                     | 11               | 25             |
+| lcd_clk      | reset_n_inv                |            | _n0313_inv                          | 3                | 10             |
+| lcd_clk      | x_cnt[4]_y_cnt[4]_XOR_34_o |            |                                     | 1                | 1              |
+| lcd_clk      | x_cnt[6]_y_cnt[6]_XOR_35_o |            |                                     | 1                | 1              |
++----------------------------------------------------------------------------------------------------------------------------------+
 
 Section 13 - Utilization by Hierarchy
 -------------------------------------
-Use the "-detail" map option to print out the Utilization by Hierarchy section.
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Module             | Partition | Slices*       | Slice Reg     | LUTs          | LUTRAM        | BRAM/FIFO | DSP48A1 | BUFG  | BUFIO | BUFR  | DCM   | PLL_ADV   | Full Hierarchical  |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| lcd_test/          |           | 53/53         | 74/74         | 153/153       | 0/0           | 0/0       | 0/0     | 0/2   | 0/0   | 0/0   | 0/1   | 0/0       | lcd_test           |
+| +pll_inst          |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 2/2   | 0/0   | 0/0   | 1/1   | 0/0       | lcd_test/pll_inst  |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Slices can be packed with basic elements from multiple hierarchies.
+  Therefore, a slice will be counted in every hierarchical module
+  that each of its packed basic elements belong to.
+** For each column, there are two numbers reported <A>/<B>.
+   <A> is the number of elements that belong to that specific hierarchical module.
+   <B> is the total number of elements from that hierarchical module and any lower level
+   hierarchical modules below.
+*** The LUTRAM column counts all LUTs used as memory including RAM, ROM, and shift registers.

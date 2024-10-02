@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-09-29T01:32:22</DateModified>
+  <DateModified>2024-10-02T21:17:59</DateModified>
   <ModuleName>led_test</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/msx/AX309/SRC/Verilog/04_led_test/iseconfig/led_test.xreport</SavedFilePath>

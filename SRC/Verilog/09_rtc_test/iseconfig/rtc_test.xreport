@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-10-14T09:26:58</DateModified>
+  <DateModified>2024-10-02T21:19:17</DateModified>
   <ModuleName>rtc_test</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>E:/BaiduYunDownload/AX309.1600808/AX309/09_VERILOG/09_rtc_test/iseconfig/rtc_test.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/BaiduYunDownload/AX309.1600808/AX309/09_VERILOG/09_rtc_test\</ImplementationReportsDirectory>
-  <DateInitialized>2015-02-28T11:28:28</DateInitialized>
+  <ImplementationReportsDirectory>/home/msx/AX309/SRC/Verilog/09_rtc_test/</ImplementationReportsDirectory>
+  <DateInitialized>2024-10-02T21:19:16</DateInitialized>
+  <SavedFilePath>/home/msx/AX309/SRC/Verilog/09_rtc_test/iseconfig/rtc_test.xreport</SavedFilePath>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Wed Oct  2 16:38:16 2024">
+  <application stringID="Xst" timeStamp="Thu Oct  3 01:06:48 2024">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -24,11 +24,11 @@
         </row>
         <row stringID="row" value="3">
           <item stringID="variable" value="LD_LIBRARY_PATH"/>
-          <item stringID="value" value="/home/msx/Xilinx/14.7/ISE_DS/ISE//lib/lin64:/home/msx/Xilinx/14.7/ISE_DS/ISE/lib/lin64:/home/msx/Xilinx/14.7/ISE_DS/EDK/lib/lin64:/home/msx/Xilinx/14.7/ISE_DS/common/lib/lin64:/lib/lin64"/>
+          <item stringID="value" value="/home/msx/Xilinx/14.7/ISE_DS/ISE//lib/lin64:/home/msx/Xilinx/14.7/ISE_DS/ISE/lib/lin64:/home/msx/Xilinx/14.7/ISE_DS/EDK/lib/lin64:/home/msx/Xilinx/14.7/ISE_DS/common/lib/lin64"/>
         </row>
         <row stringID="row" value="4">
           <item stringID="variable" value="PATH"/>
-          <item stringID="value" value="/home/msx/Xilinx/14.7/ISE_DS/ISE//bin/lin64:/home/msx/Xilinx/14.7/ISE_DS/ISE/bin/lin64:/home/msx/Xilinx/14.7/ISE_DS/ISE/sysgen/util:/home/msx/Xilinx/14.7/ISE_DS/ISE/../../../DocNav:/home/msx/Xilinx/14.7/ISE_DS/PlanAhead/bin:/home/msx/Xilinx/14.7/ISE_DS/EDK/bin/lin64:/home/msx/Xilinx/14.7/ISE_DS/EDK/gnu/microblaze/lin/bin:/home/msx/Xilinx/14.7/ISE_DS/EDK/gnu/powerpc-eabi/lin/bin:/home/msx/Xilinx/14.7/ISE_DS/EDK/gnu/arm/lin/bin:/home/msx/Xilinx/14.7/ISE_DS/EDK/gnu/microblaze/linux_toolchain/lin64_be/bin:/home/msx/Xilinx/14.7/ISE_DS/EDK/gnu/microblaze/linux_toolchain/lin64_le/bin:/home/msx/Xilinx/14.7/ISE_DS/common/bin/lin64:/bin/lin64:/sysgen/util:/../../../DocNav:/home/msx/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"/>
+          <item stringID="value" value="/home/msx/Xilinx/14.7/ISE_DS/ISE//bin/lin64:/home/msx/Xilinx/14.7/ISE_DS/ISE/bin/lin64:/home/msx/Xilinx/14.7/ISE_DS/ISE/sysgen/util:/home/msx/Xilinx/14.7/ISE_DS/ISE/../../../DocNav:/home/msx/Xilinx/14.7/ISE_DS/PlanAhead/bin:/home/msx/Xilinx/14.7/ISE_DS/EDK/bin/lin64:/home/msx/Xilinx/14.7/ISE_DS/EDK/gnu/microblaze/lin/bin:/home/msx/Xilinx/14.7/ISE_DS/EDK/gnu/powerpc-eabi/lin/bin:/home/msx/Xilinx/14.7/ISE_DS/EDK/gnu/arm/lin/bin:/home/msx/Xilinx/14.7/ISE_DS/EDK/gnu/microblaze/linux_toolchain/lin64_be/bin:/home/msx/Xilinx/14.7/ISE_DS/EDK/gnu/microblaze/linux_toolchain/lin64_le/bin:/home/msx/Xilinx/14.7/ISE_DS/common/bin/lin64:/home/msx/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/MicrosoftCorporationII.WindowsSubsystemForLinux_2.2.4.0_x64__8wekyb3d8bbwe:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/anson/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/anson/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin"/>
         </row>
         <row stringID="row" value="5">
           <item stringID="variable" value="XILINX_EDK"/>
@@ -39,13 +39,13 @@
         <item stringID="User_EnvOsname" value="Ubuntu"/>
         <item stringID="User_EnvOsrelease" value="Ubuntu 24.04.1 LTS"/>
       </item>
-      <item stringID="User_EnvHost" value="msx-Machine"/>
+      <item stringID="User_EnvHost" value="msx-machine"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-          <item stringID="arch" value="13th Gen Intel(R) Core(TM) i7-13700H"/>
-          <item stringID="speed" value="3697.898 MHz"/>
+          <item stringID="arch" value="Intel(R) Core(TM) i3-2350M CPU @ 2.30GHz"/>
+          <item stringID="speed" value="2294.786 MHz"/>
         </row>
       </table>
     </section>

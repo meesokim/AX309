@@ -1,7 +1,7 @@
-#Release 14.7 - par P.20131013 (nt64)
+#Release 14.7 - par P.20131013 (lin64)
 #Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-#Fri May 26 11:29:42 2017
+#Thu Oct  3 01:35:31 2024
 
 #
 ## NOTE: This file is designed to be imported into a spreadsheet program
@@ -12,7 +12,7 @@
 #INPUT FILE:       lcd_test_map.ncd
 #OUTPUT FILE:      lcd_test_pad.csv
 #PART TYPE:        xc6slx9
-#SPEED GRADE:      -2
+#SPEED GRADE:      -3
 #PACKAGE:          ftg256
 #
 # Pinout by Pin Number:

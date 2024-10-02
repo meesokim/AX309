@@ -2,10 +2,11 @@ Release 14.7 ngdbuild P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Command Line: /home/msx/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild
--intstyle silent -dd _ngo -nt off -uc rom_test.ucf -p xc6slx9-3ftg256
-rom_test.ngc rom_test
+-intstyle silent -dd _ngo -sd ipcore_dir -nt timestamp -uc rom_test.ucf -p
+xc6slx9-3ftg256 rom_test.ngc rom_test
 
 Reading NGO file "/home/msx/AX309/SRC/Verilog/10_rom_test/rom_test.ngc" ...
+Loading design module "ipcore_dir/rom_ip.ngc"...
 Loading design module
 "/home/msx/AX309/SRC/Verilog/10_rom_test/chipscope_ila.ngc"...
 Loading design module
@@ -19,11 +20,6 @@ Checking Constraint Associations...
 Done...
 
 Checking expanded design ...
-ERROR:NgdBuild:604 - logical block 'rom_ip_inst' with type 'rom_ip' could not be
-   resolved. A pin name misspelling can cause this, a missing edif or ngc file,
-   case mismatch between the block name and the edif or ngc file name, or the
-   misspelling of a type name. Symbol 'rom_ip' is not supported in target
-   'spartan6'.
 
 Partition Implementation Status
 -------------------------------
@@ -33,14 +29,13 @@ Partition Implementation Status
 -------------------------------
 
 NGDBUILD Design Results Summary:
-  Number of errors:     1
+  Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 415488 kilobytes
+Total memory usage is 415996 kilobytes
 
-Total REAL time to NGDBUILD completion:  1 sec
-Total CPU time to NGDBUILD completion:   1 sec
-
-One or more errors were found during NGDBUILD.  No NGD file will be written.
+Writing NGD file "rom_test.ngd" ...
+Total REAL time to NGDBUILD completion:  7 sec
+Total CPU time to NGDBUILD completion:   7 sec
 
 Writing NGDBUILD log file "rom_test.bld"...

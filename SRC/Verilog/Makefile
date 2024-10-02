@@ -1,5 +1,6 @@
 DEVICE = xc6slx9-3ftg256
-TITLE := $(shell echo $(shell basename $(CURDIR)) | cut -c 4-)
+# TITLE := $(shell echo $(shell basename $(CURDIR)) | cut -c 4-)
+TITLE := $(patsubst %.xise,%,$(wildcard *.xise))
 
 IMPACT_CMD_FILE := _impact.cmd
 UCF_FILE := $(TITLE).ucf
@@ -48,7 +49,7 @@ bitgen: $(TOP).bit
 
 %.ngd %.bld: %.ngc $(UCF_FILE)
 	@rm -f $*.ngd $*.bld
-	ngdbuild -intstyle silent -dd _ngo -nt off -uc \
+	ngdbuild -intstyle silent -dd _ngo -sd ipcore_dir -nt timestamp -uc \
 		$(filter %.ucf,$^) -p $(DEVICE) $< $(TOP)
 
 #-----------------------------------------------------------------------------
@@ -63,7 +64,7 @@ bitgen: $(TOP).bit
 %.ncd %.unroutes %.par %.twr: %_map.ncd $(TOP).pcf
 	@rm -f $*.ncd $*.unroutes $*.par $*.twr
 	par -w -ol high $< $@ $(filter %.pcf,$^)
-	trce -e $*.ncd $*.pcf
+	trce -fastpaths -xml $(TITLE).twx -e $*.ncd $*.pcf
 
 #-----------------------------------------------------------------------------
 
@@ -88,10 +89,10 @@ burn: $(TOP).bit $(IMPACT_CMD_FILE)
 
 show:
 	@echo SOURCES $(SOURCES)
-	echo TOP => $(TOP)
-	echo TITLE => $(TITLE)
-	echo $(TOP_FILE)
-	echo $(UCF_FILE)
+	@echo TOP $(TOP)
+	@echo TITLE $(TITLE)
+	@echo TOP_FILE $(TOP_FILE)
+	@echo UCF_FILE $(UCF_FILE)
 	@echo XST_FILE $(XST_FILE)
 	@echo PRJ_FILE $(PRJ_FILE)
 #-----------------------------------------------------------------------------

@@ -5,19 +5,19 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"E:\BaiduYunDownload\AX309.170526\AX309.170526\09_VERILOG\21_lcd_test\lcd_test.v" Line 81: Result of <arg fmt="%d" index="1">12</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">11</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/msx/AX309/SRC/Verilog/21_lcd_test/lcd_test.v" Line 81: Result of <arg fmt="%d" index="1">12</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">11</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"E:\BaiduYunDownload\AX309.170526\AX309.170526\09_VERILOG\21_lcd_test\lcd_test.v" Line 104: Result of <arg fmt="%d" index="1">11</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/msx/AX309/SRC/Verilog/21_lcd_test/lcd_test.v" Line 104: Result of <arg fmt="%d" index="1">11</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"E:\BaiduYunDownload\AX309.170526\AX309.170526\09_VERILOG\21_lcd_test\ipcore_dir\pll.v" Line 130: Assignment to <arg fmt="%s" index="1">status_int</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/msx/AX309/SRC/Verilog/21_lcd_test/ipcore_dir/pll.v" Line 130: Assignment to <arg fmt="%s" index="1">status_int</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"E:\BaiduYunDownload\AX309.170526\AX309.170526\09_VERILOG\21_lcd_test\lcd_test.v" Line 273: Assignment to <arg fmt="%s" index="1">LOCKED</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/msx/AX309/SRC/Verilog/21_lcd_test/lcd_test.v" Line 273: Assignment to <arg fmt="%s" index="1">LOCKED</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">E:\BaiduYunDownload\AX309.170526\AX309.170526\09_VERILOG\21_lcd_test\lcd_test.v</arg>&quot; line <arg fmt="%s" index="2">266</arg>: Output port &lt;<arg fmt="%s" index="3">LOCKED</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">pll_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/msx/AX309/SRC/Verilog/21_lcd_test/lcd_test.v</arg>&quot; line <arg fmt="%s" index="2">266</arg>: Output port &lt;<arg fmt="%s" index="3">LOCKED</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">pll_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">grid_data_1_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lcd_test</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">7 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;grid_data_1_1&gt; &lt;grid_data_1_2&gt; &lt;grid_data_1_3&gt; &lt;grid_data_1_4&gt; &lt;grid_data_1_5&gt; &lt;grid_data_1_6&gt; &lt;grid_data_1_7&gt; </arg>

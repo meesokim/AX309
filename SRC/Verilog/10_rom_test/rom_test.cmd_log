@@ -22,3 +22,9 @@ map -intstyle ise -p xc6slx9-ftg256-3 -w -logic_opt off -ol high -t 1 -xt 0 -reg
 par -w -intstyle ise -ol high -mt off rom_test_map.ncd rom_test.ncd rom_test.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml rom_test.twx rom_test.ncd -o rom_test.twr rom_test.pcf -ucf rom_test.ucf 
 bitgen -intstyle ise -f rom_test.ut rom_test.ncd 
+map -intstyle ise -p xc6slx9-ftg256-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o rom_test_map.ncd rom_test.ngd rom_test.pcf 
+xst -intstyle ise -ifn "/home/msx/AX309/SRC/Verilog/10_rom_test/rom_test.xst" -ofn "/home/msx/AX309/SRC/Verilog/10_rom_test/rom_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc rom_test.ucf -p xc6slx9-ftg256-3 rom_test.ngc rom_test.ngd  
+map -intstyle ise -p xc6slx9-ftg256-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o rom_test_map.ncd rom_test.ngd rom_test.pcf 
+par -w -intstyle ise -ol high -mt off rom_test_map.ncd rom_test.ncd rom_test.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml rom_test.twx rom_test.ncd -o rom_test.twr rom_test.pcf -ucf rom_test.ucf 

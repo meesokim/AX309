@@ -1,7 +1,7 @@
-Release 14.7 Drc P.20131013 (nt64)
+Release 14.7 Drc P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Fri May 26 11:29:51 2017
+Thu Oct  3 01:36:00 2024
 
 drc -z lcd_test.ncd lcd_test.pcf
 

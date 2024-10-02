@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-08-10T15:13:40</DateModified>
+  <DateModified>2024-10-03T00:15:38</DateModified>
   <ModuleName>rom_test</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>E:/Project/AX309/CD/09_VERILOG/10_rom_test/iseconfig/rom_test.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/Project/AX309/CD/09_VERILOG/10_rom_test\</ImplementationReportsDirectory>
+  <SavedFilePath>/home/msx/AX309/SRC/Verilog/10_rom_test/iseconfig/rom_test.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/msx/AX309/SRC/Verilog/10_rom_test/</ImplementationReportsDirectory>
   <DateInitialized>2015-08-10T11:32:14</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
