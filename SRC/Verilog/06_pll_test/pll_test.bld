@@ -1,12 +1,11 @@
-Release 14.7 ngdbuild P.20131013 (nt64)
+Release 14.7 ngdbuild P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
--intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pll_test.ucf -p
-xc6slx9-ftg256-2 pll_test.ngc pll_test.ngd
+Command Line: /home/msx/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild
+-intstyle silent -dd _ngo -nt off -uc pll_test.ucf -p xc6slx9-3ftg256
+pll_test.ngc pll_test
 
-Reading NGO file
-"E:/BaiduYunDownload/AX309.161028/AX309/09_VERILOG/06_pll_test/pll_test.ngc" ...
+Reading NGO file "/home/msx/AX309/SRC/Verilog/06_pll_test/pll_test.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -35,10 +34,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 163084 kilobytes
+Total memory usage is 387616 kilobytes
 
 Writing NGD file "pll_test.ngd" ...
-Total REAL time to NGDBUILD completion:  2 sec
-Total CPU time to NGDBUILD completion:   2 sec
+Total REAL time to NGDBUILD completion:  1 sec
+Total CPU time to NGDBUILD completion:   1 sec
 
 Writing NGDBUILD log file "pll_test.bld"...

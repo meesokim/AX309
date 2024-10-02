@@ -1,7 +1,7 @@
-Release 14.7 - par P.20131013 (nt64)
+Release 14.7 - par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon Nov 14 18:00:49 2016
+Wed Oct  2 16:26:20 2024
 
 
 # NOTE: This file is designed to be imported into a spreadsheet program
@@ -12,7 +12,7 @@ Mon Nov 14 18:00:49 2016
 INPUT FILE:       pll_test_map.ncd
 OUTPUT FILE:      pll_test.pad
 PART TYPE:        xc6slx9
-SPEED GRADE:      -2
+SPEED GRADE:      -3
 PACKAGE:          ftg256
 
 Pinout by Pin Number:
