@@ -1,7 +1,0 @@
-INFILE=/home/msx/AX309/SRC/Verilog/21_lcd_test/lcd_test.ncd
-OUTFILE=/home/msx/AX309/SRC/Verilog/21_lcd_test/lcd_test.bit
-FAMILY=Spartan6
-PART=xc6slx9-3ftg256
-WORKINGDIR=/home/msx/AX309/SRC/Verilog/21_lcd_test
-LICENSE=WebPack
-USER_INFO=212658801_0_0_072
