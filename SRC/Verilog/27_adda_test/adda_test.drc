@@ -1,7 +1,7 @@
-Release 14.7 Drc P.20131013 (nt64)
+Release 14.7 Drc P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon Jul 20 10:17:07 2015
+Thu Oct  3 17:26:26 2024
 
 drc -z adda_test.ncd adda_test.pcf
 

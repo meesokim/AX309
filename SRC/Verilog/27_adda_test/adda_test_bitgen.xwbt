@@ -1,8 +1,7 @@
-INTSTYLE=ise
-INFILE=E:\Project\AX309\Verilog\23_adda_test\adda_test.ncd
-OUTFILE=E:\Project\AX309\Verilog\23_adda_test\adda_test.bit
+INFILE=/home/msx/AX309/SRC/Verilog/27_adda_test/adda_test.ncd
+OUTFILE=/home/msx/AX309/SRC/Verilog/27_adda_test/adda_test.bit
 FAMILY=Spartan6
 PART=xc6slx9-2ftg256
-WORKINGDIR=E:\Project\AX309\Verilog\23_adda_test
+WORKINGDIR=/home/msx/AX309/SRC/Verilog/27_adda_test
 LICENSE=WebPack
-USER_INFO=__0_0_0
+USER_INFO=212658801_0_0_072
