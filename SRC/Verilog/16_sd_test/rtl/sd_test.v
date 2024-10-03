@@ -40,9 +40,9 @@ reg write_req;
 wire [7:0]mydata_o;
 wire myvalid_o;
 
-wire init_o;             //SD 初始化完成标识
-wire write_o;            //SD blcok写完成标识
-wire read_o;             //SD blcok读完成标识
+wire init_o;             //SD 始杀识
+wire write_o;            //SD blcok写杀识
+wire read_o;             //SD blcok杀识
 
 reg [3:0] sd_state;
 
@@ -61,7 +61,7 @@ assign SD_cs=SD_cs_o;
 assign SD_datain=SD_datain_o;
 
 /*******************************/
-//SD卡初始化,block写,block读	
+//SD始,block写,block	
 /*******************************/
 always @ ( posedge SD_clk or negedge rst_n )
     if( !rst_n ) begin
@@ -74,25 +74,25 @@ always @ ( posedge SD_clk or negedge rst_n )
 	 else 
 	     case( sd_state )
 
-	      STATUS_INITIAL:      // 等待sd卡初始化结束
+	      STATUS_INITIAL:      // 却sd始
 			if( init_o ) begin sd_state <= STATUS_WRITE; write_sec <= 32'd0; write_req<=1'b1; end
 			else begin sd_state <= STATUS_INITIAL; end	
 		  
-	      STATUS_WRITE:        //等待sd卡block写结束
+	      STATUS_WRITE:        //却sdblock写
 			if( write_o ) begin sd_state <= STATUS_READ; read_sec <= 32'd0; read_req<=1'b1; end
 			else begin write_req<=1'b0; sd_state <= STATUS_WRITE; end
 	
-			STATUS_READ:        //等待sd卡block读结束
+			STATUS_READ:        //却sdblock
 			if( read_o ) begin sd_state <= STATUS_IDLE; end
 			else begin read_req<=1'b0; sd_state <= STATUS_READ;  end
 			
-	      STATUS_IDLE:        //空闲状态
+	      STATUS_IDLE:        //状态
 			sd_state <= STATUS_IDLE;
 			
 			default: sd_state <= STATUS_IDLE;
 	      endcase
 
-//SD卡初始化程序				
+//SD始				
 sd_initial	sd_initial_inst(					
 						.rst_n(rst_n),
 						.SD_clk(SD_clk),
@@ -106,7 +106,7 @@ sd_initial	sd_initial_inst(
 );
 
 
-//SD卡block读程序, 写512个0~255,0~255的数据			 
+//SDblock, 写5120~255,0~255			 
 sd_write	sd_write_inst(   
 						.SD_clk(SD_clk),
 						.SD_cs(SD_cs_w),
@@ -123,7 +123,7 @@ sd_write	sd_write_inst(
 						
     );
 
-//SD卡block读程序, 读512个数据			 
+//SDblock, 512			 
 sd_read	sd_read_inst(   
 						.SD_clk(SD_clk),
 						.SD_cs(SD_cs_r),
@@ -207,17 +207,7 @@ BUFG bufg_instb(
 	 
 wire [35:0]   CONTROL0;
 wire [255:0]  TRIG0;
-chipscope_icon icon_debug (
-    .CONTROL0(CONTROL0) // INOUT BUS [35:0]
-);
-
-chipscope_ila ila_filter_debug (
-    .CONTROL(CONTROL0), // INOUT BUS [35:0]
-   // .CLK(dma_clk),      // IN
-    .CLK(clock100M),      // IN
-    .TRIG0(TRIG0)      // IN BUS [255:0]
-    //.TRIG_OUT(TRIG_OUT0)
-);                                                     
+                                            
 
 assign  TRIG0[3:0]=sd_state;     
 assign  TRIG0[4]=init_o;  

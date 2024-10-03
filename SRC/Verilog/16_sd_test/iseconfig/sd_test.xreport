@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-05-13T10:18:49</DateModified>
+  <DateModified>2024-10-03T16:14:36</DateModified>
   <ModuleName>sd_test</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>E:/BaiduYunDownload/AX309.170411/AX309.161219/AX309/09_VERILOG/16_sd_test/iseconfig/sd_test.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/BaiduYunDownload/AX309.170411/AX309.161219/AX309/09_VERILOG/16_sd_test\</ImplementationReportsDirectory>
+  <SavedFilePath>/home/msx/AX309/SRC/Verilog/16_sd_test/iseconfig/sd_test.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/msx/AX309/SRC/Verilog/16_sd_test/</ImplementationReportsDirectory>
   <DateInitialized>2015-04-02T20:48:38</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

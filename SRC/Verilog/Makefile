@@ -1,4 +1,4 @@
-DEVICE = xc6slx9-3ftg256
+DEVICE = xc6slx9-2-ftg256
 # TITLE := $(shell echo $(shell basename $(CURDIR)) | cut -c 4-)
 TITLE := $(patsubst %.xise,%,$(wildcard *.xise))
 
@@ -105,7 +105,7 @@ CLEAN_EXTS += .twr .twr_pad.txt .twx .unroutes _usage.xml .xpi _xst.xrpt
 clean:
 	rm -f $(foreach x,$(CLEAN_EXTS),$(TOP)$(x))
 	rm -f par_usage_statistics.html webtalk.log
-	rm -f usage_statistics_webtalk.html
+	rm -f usage_statistics_webtalk.html $(TITLE)_envsettings.html $(TITLE)_summary.html 
 	rm -f *.cmd_log
 	rm -f '#Makefile#' '.#Makefile'
 	rm -f _impactbatch.log
